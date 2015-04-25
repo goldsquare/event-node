@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Events</title>
+    <!-- Bootstrap -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel='stylesheet' href='stylesheets/style.css'/>
+     <link rel='stylesheet' href='stylesheets/datepicker.css'/>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body ng-app="app" ng-controller="MyCtrl">
+    
+      <button ng-click="twitterLogin()" class="btn btn-default">Twitter Login</button>
+       <button ng-click="fbLogin()" class="btn btn-default">Facebook Login</button>
+      <div id="previewBox" >
+          <div  id="preview"> /></div>
+
+            <h3 id="previewGenre">[[ genre ]]</h3>
+           <div id="previewMonth">
+
+           </div>
+           <div id="previewDay">
+
+           </div>
+          <h2 id="previewName">[[ eventName ]]</h2>
+           <h3 id="previewAddress">[[ address ]]</h3>
+           <h3 id="previewCity"> [[ city ]] , [[ state ]] [[ zipcode ]]</h3>
+
+      </div>
+      
+      <h3 id="status">
+      </h3>
+      
+      <div id="box">
+    <form class="well form-horizontal" >
+
+      <button id="upBtn" class="btn btn-danger bt-lg">Upload File
+      <input ng-model="files" id="files" type="file"> </button>
+ <input type="text" ng-model="genre" id="genre" class="form-control" placeholder="genre"/>
+  <input ng-model="eventName" id="eventName" class="form-control" placeholder="event">
+<!-- Text input-->    
+  <input ng-model="address" id="address" placeholder="Address" class="form-control" type="text">
+  <input ng-model="city" id="city" placeholder="city" class="form-control"  type="text">
+
+<!-- Select Basic -->
+   
+<div class="form-group"> 
+  <label class="col-md-4 control-label">State</label>
+    <div class="col-md-4 selectContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+    <select ng-model="state" id="state" name="state" class="form-control selectpicker" >
+      <option value=" " >Please select your state</option>
+      <option>Alabama</option>
+      <option>Alaska</option>
+      <option >Arizona</option>
+      <option >Arkansas</option>
+      <option >California</option>
+      <option >Colorado</option>
+      <option >Connecticut</option>
+      <option >Delaware</option>
+      <option >District of Columbia</option>
+      <option> Florida</option>
+      <option >Georgia</option>
+      <option >Hawaii</option>
+      <option >daho</option>
+      <option >Illinois</option>
+      <option >Indiana</option>
+      <option >Iowa</option>
+      <option> Kansas</option>
+      <option >Kentucky</option>
+      <option >Louisiana</option>
+      <option>Maine</option>
+      <option >Maryland</option>
+      <option> Mass</option>
+      <option >Michigan</option>
+      <option >Minnesota</option>
+      <option>Mississippi</option>
+      <option>Missouri</option>
+      <option>Montana</option>
+      <option>Nebraska</option>
+      <option>Nevada</option>
+      <option>New Hampshire</option>
+      <option>New Jersey</option>
+      <option>New Mexico</option>
+      <option>New York</option>
+      <option>North Carolina</option>
+      <option>North Dakota</option>
+      <option>Ohio</option>
+      <option>Oklahoma</option>
+      <option>Oregon</option>
+      <option>Pennsylvania</option>
+      <option>Rhode Island</option>
+      <option>South Carolina</option>
+      <option>South Dakota</option>
+      <option>Tennessee</option>
+      <option>Texas</option>
+      <option> Uttah</option>
+      <option>Vermont</option>
+      <option>Virginia</option>
+      <option >Washington</option>
+      <option >West Virginia</option>
+      <option>Wisconsin</option>
+      <option >Wyoming</option>
+    </select>
+  </div>
+</div>
+</div>
+
+    <!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Zip Code</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+  <input ng-model="zipcode" id="zipcode" placeholder="Zip Code" class="form-control"  type="number">
+    </div>
+</div>
+</div>
+
+<div class='formInput dateSelector'>
+    <i class='fa fa-calendar-o'></i>
+    <input type='text' id='hbdsdf' placeholder='Event Date' />
+  </div>
+
+ <button ng-click="upload()" id="submitBtn" class="btn btn-danger btn-lg">Preview</button>
+ <button ng-click="yes()" id="yesBtn" class="btn btn-danger btn-lg">
+  Yes
+ </button>
+  <button ng-click="no()" id="noBtn" class="btn btn-danger btn-lg">
+   No
+  </button>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+       <script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="lib/angular.js"></script>
+    <script type="text/javascript" src="lib/s3upload.js"></script>  
+    <script type="text/javascript" src="javascripts/app.js"></script>
+    <script type="text/javascript" src="javascripts/controllers.js"></script>
+    <script type="text/javascript" src="javascripts/services/uploadservice.js"></script>
+    <script type="text/javascript" src="javascripts/services/timelineservice.js"></script>
+     <script type="text/javascript" src="javascripts/services/loginservice.js"></script>
+    <script type="text/javascript" src="javascripts/datepicker.js"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

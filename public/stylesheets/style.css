@@ -1,0 +1,112 @@
+#pic
+{
+	border-radius: 10px;
+}
+#preview
+{
+	background-color: black;
+	width: 500px;
+	height: 500px;
+	border-radius: 10px;
+}
+#status
+{
+	margin-left: 40%;
+}
+#previewGenre
+{
+	position: absolute;
+	margin-top: -450px;
+	padding-left: 80px;
+	color: white;
+	margin-left: 5px;
+}
+#previewDay
+{
+	position: absolute;
+	margin-top: -430px;
+	color: white;
+	margin-left: 5px;
+}
+#previewMonth
+{
+	position: absolute;
+	margin-top: -470px;
+	color: white;
+	margin-left: 5px;
+}
+#previewCity
+{
+	position: absolute;
+	margin-top: -100px;
+	color: white;
+	margin-left: 5px;
+}
+#previewAddress
+{
+	position: absolute;
+	margin-top: -170px;
+	color: white;
+	padding-top: 20px;
+	margin-left: 5px;
+}
+#previewImage
+{
+	position: relative;
+}
+#previewName
+{
+	position: absolute;
+	margin-top: -200px;
+	color: white;
+	margin-left: 5px;
+}
+#previewBox
+{
+	width: 300px;
+	height: 400px;
+	margin-left: 30%;
+	border-radius: 10px;
+	
+
+}
+
+#box
+{
+	width: 90%;
+	height: 800px;
+	padding-top: 120px;
+	border-radius: 10px;
+	opacity: 0.8;
+	margin-left: 5%;
+}
+
+#genre, #eventName ,#address, #eventDate , #upBtn , #city
+{
+	margin-top: 10px;
+	width: 80%;
+	margin-left: 10%;
+
+} 
+#yesBtn, #noBtn
+{
+	margin-left: 30%;
+	margin-top: 10px;	
+}
+#submitBtn
+{
+	margin-left: 40%;
+	margin-top: 10px;
+}
+
+body {
+ 
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
